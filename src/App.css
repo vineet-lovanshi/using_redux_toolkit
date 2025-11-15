@@ -1,0 +1,13 @@
+.clear-btn {
+  background-color: rgb(81, 69, 133);
+  color: white;
+  font-size: 0.9rem;
+  border-radius: 15px;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.clear-btn:hover {
+  background-color: rgb(47, 36, 98);
+}
