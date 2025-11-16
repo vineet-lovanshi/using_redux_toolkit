@@ -11,6 +11,8 @@ const Product = () => {
     dispatch(fetchProduct());
   }, []);
   const productSelector = useSelector((state) => state.products.items);
+  const cartSelector = useSelector((state) => state.cart.items);
+  console.log(cartSelector);
   // console.log(productSelector);
 
   return (
@@ -26,20 +28,23 @@ const Product = () => {
                   <div className="brand">{item.brand}</div>
                   <div className="price">$ {item.price}</div>
                   <div className="rating">{item.rating}</div>
-                  <div className="cart-button">
+
+                  {cartSelector.find((cartItem) => cartItem.id === item.id) ? (
                     <button
-                      onClick={() => dispatch(addItem(1))}
+                      onClick={() => dispatch(addItem(item))}
+                      className="btn added-cart"
+                      disabled
+                    >
+                      Added in cart
+                    </button>
+                  ) : (
+                    <button
+                      onClick={() => dispatch(addItem(item))}
                       className="btn"
                     >
                       Add to cart
                     </button>
-                    <button
-                      onClick={() => dispatch(removeItem(1))}
-                      className="btn remove-btn"
-                    >
-                      Remove from cart
-                    </button>
-                  </div>
+                  )}
                 </div>
               </div>
             ))}

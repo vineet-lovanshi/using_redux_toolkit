@@ -107,10 +107,11 @@ body {
   font-size: 13px;
   color: #595757;
 }
-.cart-button {
-  display: flex;
-  gap: 10px; /*adjust the space as needed*/
-  margin: 2px;
+.added-cart {
+  background-color: #998d8d;
+}
+.added-cart:hover {
+  background-color: #635d5d;
 }
 .remove-btn {
   background-color: rgb(235, 60, 60);

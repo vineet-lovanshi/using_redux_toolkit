@@ -16,9 +16,9 @@ const Header = () => {
             <a href="#">About</a>
             <a href="#">Contact</a>
           </nav>
-          <button onClick={() => dispatch(clearItem())} className="clear-btn">
+          {/* <button onClick={() => dispatch(clearItem())} className="clear-btn">
             clear
-          </button>
+          </button> */}
           <AddCart></AddCart>
         </header>
       </div>
