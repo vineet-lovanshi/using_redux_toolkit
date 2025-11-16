@@ -12,7 +12,7 @@ const Product = () => {
   }, []);
   const productSelector = useSelector((state) => state.products.items);
   const cartSelector = useSelector((state) => state.cart.items);
-  console.log(cartSelector);
+  // console.log(cartSelector);
   // console.log(productSelector);
 
   return (
@@ -31,11 +31,10 @@ const Product = () => {
 
                   {cartSelector.find((cartItem) => cartItem.id === item.id) ? (
                     <button
-                      onClick={() => dispatch(addItem(item))}
-                      className="btn added-cart"
-                      disabled
+                      onClick={() => dispatch(removeItem(item))}
+                      className="btn remove-cart"
                     >
-                      Added in cart
+                      Remove from cart
                     </button>
                   ) : (
                     <button
