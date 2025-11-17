@@ -3,6 +3,7 @@ import AddCart from "./AddCart";
 import "./index.css";
 import { useDispatch } from "react-redux";
 import { clearItem } from "./redux/slice";
+import { NavLink } from "react-router";
 const Header = () => {
   const dispatch = useDispatch();
   return (
@@ -12,7 +13,7 @@ const Header = () => {
           <div className="logo">ShopLogo</div>
 
           <nav className="navbar">
-            <a href="#">Home</a>
+            <NavLink to={"/"}>Home</NavLink>
             <a href="#">About</a>
             <a href="#">Contact</a>
           </nav>

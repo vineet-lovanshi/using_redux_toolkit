@@ -6,6 +6,8 @@ import "./App.css";
 import Product from "./Product";
 import { clearItem } from "./redux/slice";
 import { useDispatch } from "react-redux";
+import { Route, Routes } from "react-router";
+import CartPage from "./CartPage";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -15,7 +17,10 @@ function App() {
     <>
       <Header></Header>
 
-      <Product></Product>
+      <Routes>
+        <Route path="/" element={<Product></Product>} />
+        <Route path="/cart-page" element={<CartPage />} />
+      </Routes>
     </>
   );
 }
