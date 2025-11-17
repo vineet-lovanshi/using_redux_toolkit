@@ -3,9 +3,13 @@ import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
 import store from "./redux/store.jsx";
 import App from "./App";
+import { BrowserRouter } from "react-router";
 
 createRoot(document.getElementById("root")).render(
-  <Provider store={store}>
-    <App />
-  </Provider>
+  <BrowserRouter>
+    {" "}
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </BrowserRouter>
 );
