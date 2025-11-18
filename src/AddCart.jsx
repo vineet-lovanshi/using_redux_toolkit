@@ -6,7 +6,7 @@ import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router";
 const AddCart = () => {
   const cartSelector = useSelector((state) => state.cart.items);
-  console.log(cartSelector);
+  // console.log(cartSelector);
 
   const navigate = useNavigate();
 
