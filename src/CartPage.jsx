@@ -1,10 +1,20 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { clearItem, removeItem } from "./redux/slice";
+import { useNavigate } from "react-router";
 
 const CartPage = () => {
   const cartSelector = useSelector((state) => state.cart.items);
   // console.log(selector);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
+  const handlePlaceOrder = () => {
+    localStorage.clear();
+    dispatch(clearItem());
+    alert("Order placed");
+    navigate("/");
+  };
   return (
     <div>
       <div className="cart-container">
@@ -24,7 +34,12 @@ const CartPage = () => {
                 </div>
                 <div className="item-actions">
                   <span className="price">$ {item.price}</span>
-                  <button className="btn">Remove</button>
+                  <button
+                    onClick={() => dispatch(removeItem(item))}
+                    className="btn"
+                  >
+                    Remove
+                  </button>
                 </div>
               </div>
             ))
@@ -33,6 +48,9 @@ const CartPage = () => {
           Total Price : $
           {cartSelector.reduce((sum, item) => sum + item.price, 0).toFixed(2)}
         </div>
+        <button onClick={handlePlaceOrder} className="btn">
+          Place Order
+        </button>
       </div>
     </div>
   );
