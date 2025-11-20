@@ -65,3 +65,12 @@
   margin-top: 10px;
   color: green;
 }
+.action-container {
+  display: flex;
+}
+.input-quantity {
+  /* margin: 30px 25px 5px; */
+  height: 25px;
+  margin-top: 33px;
+  margin-right: 15px;
+}
